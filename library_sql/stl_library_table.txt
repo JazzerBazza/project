@@ -32,7 +32,7 @@ CREATE TABLE manager (
     
    CREATE TABLE inventory (
     book_title VARCHAR (128),
-    book_id INT,
+    book_id VARCHAR(4),
     book_in VARCHAR(1),
     book_out VARCHAR(1),
     due_date DATE,
@@ -46,7 +46,7 @@ CREATE TABLE manager (
     
 CREATE TABLE tracking (
     book_title VARCHAR (128),
-    book_id INT,
+    book_id VARCHAR(4),
     book_isle VARCHAR (1),
     book_shelf INT,
     book_in VARCHAR (1),
