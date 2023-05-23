@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% include 'header.html' %}
+{% block body %}
+
+            <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+{% if record %}
+    <table>
+        <tr><th>Product ID</th><th>Product</th><th>Item Image</th><th>Price</th></tr>
+        <tr>
+            <td><a href="{{ url_for('product_display',id=record['Product_id']) }}">{{ record['Product_id'] }}</a></td>
+            <td>{{ record['Product_name'] }} </td>
+            <td><div class="col-4"><img src="/static/{{ record['image'] }}" width="150"></div></td>
+            <td>{{ record['Price'] }} </td>
+        </tr>
+        <tr><td><a href="/add_to_cart/{{record['Product_id']}}/{{record['Product_name']}}/{{session['id']}}/">Add to Cart</a></td></tr>
+    </table>
+{% else %}
+<h2>No records returned.</h2>
+{% endif %}
+	<!-- home.html ends here-->
+{% endblock %}

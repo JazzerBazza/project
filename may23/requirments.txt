@@ -1,0 +1,7 @@
+flask
+pymysql
+Flask-WTF
+cryptography
+flask-HTTPAuth
+Flask-Bootstrap4
+Flask-WTF

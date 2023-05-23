@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% include 'header.html' %}
+{% block body %}
+{% if records %}
+<h1>{{ description }}</h1>
+    <h2 class="lead">>There are {{ records|length }} items in your cart!</h2>
+    <table>
+        <tr><th>Product ID</th><<th>Customer ID</th></tr>
+
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record['Product_id'] }}
+            <td>{{ record['Customer_id'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+<h2>Your cart is empty.</h2>
+{% endif %}
+
+{% endblock %}
+

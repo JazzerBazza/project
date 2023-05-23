@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% include 'header.html' %}
+
+
+{% block body %}
+
+
+   {% if session.Username %}
+      You are Registered {{ session.Username }} <a href="/logout">logout</a>.
+   {% else %}
+      You are not Registered. <a href="/login">login</a>.
+   {% endif %}
+
+
+
+            <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+        <h1>{{title}}</h1>
+                <br>
+        <p>{{description}}</p>
+                <br>
+{% if records %}
+    <table>
+        {% for record in records %}
+        <tr>
+            <td><a href="{{ url_for('product_display',id=record['Product_id']) }}">{{ record['Product_id'] }}</a></td>
+            <td><div class="col-4"><img src="/static/{{ record['image'] }}" width="150"></td>
+            <td><div class="product-title">{{ record['Product_name'] }} </td>
+            <td><div class="product-price">{{ record['Price'] }} </td>
+
+                    </tr>
+        {% endfor %}
+
+    </table>
+
+{% else %}
+<h2>No records returned.</h2>
+{% endif %}
+
+
+
+  {% endblock %}
+
+
