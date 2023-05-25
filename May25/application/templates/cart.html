@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% include 'header.html' %}
+{% block body %}
+{% if records %}
+<h1>{{ description }}</h1>
+<br>
+    <h2 class="lead">>There are {{ records|length }} items in your cart</h2>
+<br>
+    <table>
+        <tr><th>Product ID</th><th>Product</th><th>Price</th></tr>
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record['Product_id'] }} </td>
+            <td>{{ record['Product_name'] }} </td>
+            <td>{{ record['Price'] }} </td>
+        </tr>
+        {% endfor %}
+        <tr> <td><a href="{{url_for('empty_cart')}}" class="btm btn-danger btn-sm float-right">Clear Cart</a></td></tr>
+    </table>
+
+{% else %}
+<h2>Your cart is empty.</h2>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+
+

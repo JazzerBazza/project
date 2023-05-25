@@ -1,0 +1,59 @@
+{% block footer %}
+<div class="footer">
+        <div class="container">
+            <div class="row">
+              <div class="footer-col-1">
+                <h3> Download our APP!</h3>
+                <P>Download our App on Android and IOS.</P>
+                <div class="app-logo">
+                    <img src="static/img/586-5866978_download-on-the-app-store-button-png-transparent.png" width="50px">
+                    <img src="static/img/get-it-on-google-play-logo.png" width="50px">
+
+                </div>
+              </div>
+              <div class="footer-col-2">
+                <img src="static/img/sky logo.png" width="80px">
+                <P>Our purpose is to sustainably make the pleasure and
+                    benefits of sports accessible to the many.</P>
+              </div>
+              <div class="footer-col-3">
+                <h3> Useful Links</h3>
+                <ul>
+                    <li>Discounts</li>
+                    <li>Blog Post</li>
+                    <li>Returns Policy</li>
+                    <li>Join Affilate</li>
+                </ul>
+
+              </div>
+              <div class="footer-col-4">
+                <h3> Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Tik Tok</li>
+                </ul>
+
+
+            </div>
+         </div>
+    </div>
+  </div>
+
+  <!------------js for menu toggle menu----------->
+  <script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menuToggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+{% endblock %}
